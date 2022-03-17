@@ -25,9 +25,9 @@
 <p></p>
 
 <h1>Personal Profile</h1>
-<img"16plogo.svg">
+<img src="16plogo.svg">
 <h3>Myers-Briggs Type Indicator</h3>
-<img "diplomats_Mediator_INFP_introduction.png">
+<img src="diplomats_Mediator_INFP_introduction.png">
 <p></p>
 <h2>Strengths</h2>
 <p></p>
