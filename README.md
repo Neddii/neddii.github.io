@@ -13,7 +13,7 @@
 <h1>Interest in IT</h1>
 <p></p>
 
-<h1>Ideal Job</p>
+<h1>Ideal Job</h1 >
 <h3>Job Title</h3>
 <h2>Job Description</h2>
 <p></p>
@@ -25,7 +25,9 @@
 <p></p>
 
 <h1>Personal Profile</h1>
+<img"16plogo.svg">
 <h3>Myers-Briggs Type Indicator</h3>
+<img "diplomats_Mediator_INFP_introduction.png">
 <p></p>
 <h2>Strengths</h2>
 <p></p>
