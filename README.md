@@ -13,7 +13,7 @@ p {colour: blue;}
 <h1>My IT Profile</h1>
 <p></p>
 <h1>Personal Information</h1>
-<p>. I moved to the gold cost 5 years ago for a change of pace. And have worked with Puma for the last 9 years, who were nice enough to help me move and find work up here.</p>
+<p>I moved to the gold cost 5 years ago for a change of pace. And have worked with Puma for the last 9 years, who were nice enough to help me move and find work up here.</p>
 <p>Prior education is nothing special, I dropped out of high school just before the end of year 10 due to bullying, it was never an environment where I could thrive. Twice since then I have attempted to engage in further study however something always got in the way preventing me from completing it. However now it is my primary focus and I am very determined to finish this course in order to help me being a long awaited career change.</p>
 <p>Most of my spare time is spent playing video games, mostly single player games. Favourite games pretty much come from three franchises; Final Fantasy, Metal Gear Solid, and The Legend of Zelda.</p>
 <p>Once in a blue moon I’ll try out an MMO, but I get way too invested and spend every other moment playing until I get to a point a couple of months later and realise I just need to stop. Most notably with FFXIV, which every couple of years I’ll pick up again.
