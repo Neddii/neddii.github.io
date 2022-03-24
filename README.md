@@ -6,6 +6,7 @@
 body {background colour: powderblue;}
 h1  {colour: red;}
 p {colour: blue;}
+</style>
 <title>Assignment 1</title>
 </head>
 <body>
