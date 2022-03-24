@@ -2,6 +2,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+body {background colour: powderblue;}
+h1  {colour: red;}
+p {colour: blue;}
 <title>Assignment 1</title>
 </head>
 <body>
