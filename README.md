@@ -17,10 +17,10 @@
 <h1>Interest in IT</h1>
 <p>My interest in IT began at a fairly young age. Playing around with the family computer when I was probably about 9 years old, fascinated by the internet, the amazing graphics of the old 8-bit DOS games, and just exploring though all the systems, settings and files that every computer has.</p>
 
-<h1>Experience in IT</h>
+<h1>Experience in IT</h1>
 <p>While I have no formal training in IT, I have taught myself a decent amount (mostly through Google). When I was younger my father collected used computers and I had the time of my life pulling them apart and playing around with the hardware. (I was always better at pulling them apart than I was at putting them back together). At work I’m the one anyone goes to with any IT issues before contacting our actual IT department. As I have been with the company for so long I’ve learned quite a bit about how our systems work and what the most common fixes are. And if I don’t know I’ll generally tinker around until I get it, with a pretty good success rate!</p>
 
-<h1>Why did I choose RMIT?</p>
+<h1>Why did I choose RMIT?</h1>
 <p>Choosing to study with RMIT was a pretty easy decision. While I lived in Melbourne RMIT was already my first choice to study IT as they have an excellent reputation, great reviews and very knowledgeable staff. And even though I live in the gold Coast currently, going through OUA has given me the option once again to go through RMIT.</p>
 
 <h1>What do I expect to learn during my studies?</h1>
@@ -78,17 +78,11 @@ Passion for quality
 <p>High neurotics are worriers. Tend to be quite anxious and have greater reactions when things don’t go as planned, and can take quite a while to calm down. They will think through many options before making a decision.</p>
 <h3>What do these results mean to me?</h3>
 <p>I identify with most of these results, as an introverted, rather sensitive person who can be quite disorganised and down in the dumps. However I am a focused worker who thrives while ‘doing’ things. I get along with most people I meet, and those I choose to get to know tend to become close friends.</p>
-<h3>Team Influence</p>
+<h3>Team Influence</h3>
 <p>While working in a team I do tend to be a rather agreeable person, not speaking up unless I have something urgent or important to say. I do however have an easy time getting along with most people.</p>
 <h3>Taking this into account when forming a team</h3>
 <p>While forming a team I’m going to have to push beyond my comfort zone,  speaking up not only when I consider something to be important or urgent, but go out of my way to make suggestions and engage in conversations.</p>
 
-<h3>Test 3</h3>
-<p></p>
-<h2></h2>
-<p></p>
-<h2></h2>
-<p></p>
 
 
 <h1>Project Idea</h1>
