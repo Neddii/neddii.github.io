@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#6f45d6">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Relay</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <style>
+    :root{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,sans-serif;color-scheme:light dark}
+    *{box-sizing:border-box}body{margin:0;min-height:100svh;background:#111;color:#fff}
+    main{max-width:680px;margin:auto;padding:max(28px,env(safe-area-inset-top)) 18px max(28px,env(safe-area-inset-bottom))}
+    h1{font-size:34px;margin:8px 0 4px}.sub{opacity:.65;margin:0 0 28px}
+    .card{background:#1d1d21;border:1px solid #323238;border-radius:22px;padding:16px;margin:14px 0}
+    label{display:block;font-size:13px;opacity:.7;margin:0 0 7px}
+    input,textarea{width:100%;font:inherit;color:inherit;background:#111;border:1px solid #3a3a42;border-radius:14px;padding:13px}
+    textarea{min-height:150px;resize:vertical}button{width:100%;border:0;border-radius:15px;padding:15px;font:600 17px system-ui;background:#7c5ce0;color:white;margin-top:12px}
+    button:active{transform:scale(.99)}pre{white-space:pre-wrap;word-break:break-word;margin:0;font:15px/1.45 system-ui}
+    .status{display:flex;gap:9px;align-items:center;font-size:14px}.dot{width:9px;height:9px;border-radius:50%;background:#777}
+    .ok .dot{background:#42d17c}.err .dot{background:#ff5c64}.waiting .dot{background:#d9a441}
+    .row{display:flex;gap:10px}.row button{flex:1}.secondary{background:#34343b}
+    small{opacity:.55}
+  </style>
+</head>
+<body>
+<main>
+  <h1>Relay</h1>
+  <p class="sub">Web app ⇄ Shortcuts round-trip test</p>
+
+  <section class="card">
+    <label for="shortcut">Shortcut name</label>
+    <input id="shortcut" value="Relay Echo" autocomplete="off">
+    <label for="prompt" style="margin-top:14px">Input</label>
+    <textarea id="prompt" placeholder="Type something…">Hello from Relay 👀</textarea>
+    <button id="run">Run Shortcut</button>
+  </section>
+
+  <section class="card">
+    <div id="status" class="status"><span class="dot"></span><span>Ready</span></div>
+  </section>
+
+  <section class="card">
+    <label>Shortcut result</label>
+    <pre id="result">Nothing returned yet.</pre>
+    <div class="row">
+      <button id="copy" class="secondary">Copy</button>
+      <button id="clear" class="secondary">Clear</button>
+    </div>
+  </section>
+
+  <small>v0.1 · no account, server or API required</small>
+</main>
+
+<script>
+const $=id=>document.getElementById(id);
+const base=location.origin+location.pathname;
+const qs=new URLSearchParams(location.search);
+
+function setStatus(text,cls=''){
+  $('status').className='status '+cls;
+  $('status').lastElementChild.textContent=text;
+}
+function save(){
+  localStorage.setItem('relay.shortcut',$('shortcut').value);
+  localStorage.setItem('relay.prompt',$('prompt').value);
+}
+$('shortcut').value=localStorage.getItem('relay.shortcut')||$('shortcut').value;
+$('prompt').value=localStorage.getItem('relay.prompt')||$('prompt').value;
+
+if(qs.has('result')){
+  const r=qs.get('result')||'';
+  $('result').textContent=r;
+  localStorage.setItem('relay.lastResult',r);
+  setStatus('Returned from Shortcuts','ok');
+  history.replaceState({},'',base);
+}else if(qs.has('errorMessage')){
+  $('result').textContent=qs.get('errorMessage');
+  setStatus('Shortcut failed','err');
+  history.replaceState({},'',base);
+}else{
+  const last=localStorage.getItem('relay.lastResult');
+  if(last)$('result').textContent=last;
+}
+
+$('run').onclick=()=>{
+  save();
+  const name=$('shortcut').value.trim();
+  const text=$('prompt').value;
+  if(!name){setStatus('Enter a Shortcut name','err');return}
+  setStatus('Opening Shortcuts…','waiting');
+  const callback=encodeURIComponent(base);
+  const u='shortcuts://x-callback-url/run-shortcut?name='+encodeURIComponent(name)
+    +'&input=text&text='+encodeURIComponent(text)
+    +'&x-success='+callback
+    +'&x-error='+callback
+    +'&x-cancel='+callback;
+  location.href=u;
+};
+$('copy').onclick=async()=>{
+  const t=$('result').textContent;
+  try{await navigator.clipboard.writeText(t);setStatus('Result copied','ok')}
+  catch{setStatus('Copy failed','err')}
+};
+$('clear').onclick=()=>{
+  $('result').textContent='Nothing returned yet.';
+  localStorage.removeItem('relay.lastResult');
+  setStatus('Cleared');
+};
+if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(()=>{});
+</script>
+</body>
+</html>
