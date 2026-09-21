@@ -1,0 +1,10 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Open Focus</title></head>
+<body><p>Opening Home Assistant…</p><p><a id="ha" href="homeassistant://navigate/home-control-v2/home?server=default">Open Home Assistant</a></p>
+<script>
+const app='homeassistant://navigate/home-control-v2/home?server=default';
+const web='https://m6scrt9krw2wxoll3uo3whzgc1n7rogx.ui.nabu.casa/home-control-v2/home';
+let fallback=setTimeout(()=>location.replace(web),1800);
+document.addEventListener('visibilitychange',()=>{if(document.hidden)clearTimeout(fallback)});
+location.href=app;
+</script></body></html>
